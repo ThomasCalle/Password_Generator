@@ -48,22 +48,21 @@ function generatePassword() {
 // ENTRY PART THREE:
 
   // Presented User Message: Indicates that user must fulfill 
-  alert('Please, select "YES" or "NO" when presented with character choice note at least one character type needs to be selected');
+  alert('Please, select "YES" or "NO" when presented with Character Choices - it is mandatory that you select 1 out of the 4 Character Choices');
   
-  click = '(Press YES or NO)';
 
   const lowerCaseCharacter = confirm(
-    'Character Choice: Include Lowercase?'
+    'Character Choice: Do you want to include Lowercase?', 'YES', 'NO'
   );
   const upperCaseCharacter = confirm(
-    'Character Choice: Incldue Uppercase?'
+    'Character Choice: Do you want to incldue Uppercase?', 'YES', 'NO'
   );
   const numericCaseCharacter = confirm(
-    'Character Choice: Include Numeric?'
+    'Character Choice: Do you want to include Numeric?', 'YES', 'NO'
     );
 
   const specialCaseCharacter = confirm(
-    'Character Choice: Include Special Characters?'
+    'Character Choice: Do you want to include Special Characters?', 'YES', 'NO'
   );
 
   let passwordCriteria = {
