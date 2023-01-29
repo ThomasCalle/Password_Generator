@@ -20,7 +20,7 @@ function invaildInput() {
 }
 
 // Character is the array, here we'll generate a random number from 0 to the last index of the array - it'll return the arrays element at that index 
-function getRandomChar(character) {
+function shuffledCharacter(character) {
   let randomNumber = Math.floor(Math.random() * character.length);
   return character[randomNumber];
 }
@@ -50,17 +50,67 @@ function generatePassword() {
   // Presented User Message: Indicates that user must fulfill 
   alert('Please, select "YES" or "NO" when presented with character choice note at least one character type needs to be selected');
   
-  click = '(Press YES, NO)';
+  click = '(Press YES or NO)';
 
   const lowerCaseCharacter = confirm(
-    'Character Choice: Did you want to include Lowercase?'
+    'Character Choice: Include Lowercase?'
   );
   const upperCaseCharacter = confirm(
-    'Character Choice: Did you want to include Uppercase?'
+    'Character Choice: Incldue Uppercase?'
   );
   const numericCaseCharacter = confirm(
-    'Character Choice: Did you want to include Numeric?');
+    'Character Choice: Include Numeric?'
+    );
 
   const specialCaseCharacter = confirm(
-    'Character Choice: Did you want to include Special Characters?'
+    'Character Choice: Include Special Characters?'
   );
+
+  let passwordCriteria = {
+    PasswordLength,
+    lowerCaseCharacter,
+    upperCaseCharacter,
+    numericCaseCharacter,
+    specialCaseCharacter,
+  };
+
+  // ENTRY PART FOUR // Ambush ahead 
+
+  const characterChoice = Object.keys(passwordCriteria).filter(
+    (key) => passwordCriteria[key] === true
+  );
+
+  if (!characterChoice.length) {
+    invaildInput();
+    return 'To Complete Generation: you must select "YES" for 1 out of 4 previous "Character Choices"';
+  }
+  
+  let characterPassword = [];
+  let generatePassword = '';
+
+  if (passwordCriteria.lowerCaseCharacter) {
+    generatePassword += shuffledCharacter(lower);
+    characterPassword.push(...lower);
+  }
+  if (passwordCriteria.upperCaseCharacter) {
+    generatePassword += shuffledCharacter(upper);
+    characterPassword.push(...upper);
+  }
+
+  if (passwordCriteria.numericCaseCharacter) {
+    generatePassword += shuffledCaseCharacter(numeric);
+    characterPassword.push(...numeric);
+  }
+
+  if (passwordCriteria.specialCaseCharacter) {
+    generatePassword += shuffledCharacter(specialChar);
+    characterPassword.push(...specialChar);
+  }
+
+  while (generatePassword.length < passwordCriteria.PasswordLength) {
+    generatePassword += shuffledCharacter(characterPassword);
+  }
+
+  return generatePassword; 
+}
+generateBtn.addEventListener('click', writePassword);;
