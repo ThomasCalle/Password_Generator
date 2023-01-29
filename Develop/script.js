@@ -45,4 +45,22 @@ function generatePassword() {
     return 'Password must be: 8 Characters(minimum) to 128 Characters(maximum) enter a number from 8 - 128 below';
   }
 
-// STARTE ENTRY THREE HERE  
+// ENTRY PART THREE:
+
+  // Presented User Message: Indicates that user must fulfill 
+  alert('Please, select "YES" or "NO" when presented with character choice note at least one character type needs to be selected');
+  
+  click = '(Press YES, NO)';
+
+  const lowerCaseCharacter = confirm(
+    'Character Choice: Did you want to include Lowercase?'
+  );
+  const upperCaseCharacter = confirm(
+    'Character Choice: Did you want to include Uppercase?'
+  );
+  const numericCaseCharacter = confirm(
+    'Character Choice: Did you want to include Numeric?');
+
+  const specialCaseCharacter = confirm(
+    'Character Choice: Did you want to include Special Characters?'
+  );
