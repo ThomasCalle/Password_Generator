@@ -19,123 +19,45 @@ function writePassword() {
   }
 
   generateBtn.addEventListener("click", writePassword);
-
-// Character is the array, here we'll generate a random number from 0 to the last index of the array - it'll return the arrays element at that index 
-function shuffledCharacter(character) {
-  let randomNumber = Math.floor(Math.random() * character.length);
-  return character[randomNumber];
-}
-
-
-
-
-
-// ENTRY PART TWO: 
-
-// When function called, object will run both: key properites and methods below
+  
+  // The function starts to initialize "result" then prompts the user for length of the password (in characters) using "prompt()". 
+  // If the input is not a a valued number or is outside peramitor of 8 to 128 characters, error message is displayed through "alert()" the function will then call again using "return generatePassword()".
+  // Then "confirm()" asks to include upper case letters, lower case letters, numbers, and special characters into the newly generated password based off your preferance. If the user selects none of the options then the use will be promted with a error message - error is displayed - then the function is called again.
+  // Only whenn the user meets the criteria of desired length and all character options have been made the generated password will be executed. 
+  
 function generatePassword() {
-  var passwordCharacters = '';
-
-  // Presented User Message: User given insturctions for password criteria
-  alert('Required: follow the instructions and select your password criteria.');
-
-  // Presented User Message: User asked to choose password length between 8 characters(minimum) to 128 characters(maximum)
-  let PasswordLength = prompt(
-    'Choose Password length: 8 Characters(minimum) to 128 Characters(maximum.');
-
-  // Check if user input is 'null' or 'not null' if 'null' it is declared of 'not null' it is not declared and repeats 'Presented User Message' until it is met.
-  if (!(PasswordLength && PasswordLength >= 8 && PasswordLength <= 128)) {
-    invaildInput();
-    return 'Password must be: 8 Characters (minimum) to 128 Characters (maximum) enter a number from 8 - 128 below.';
+  var result = "";
+  var length = prompt("How many characters in your random password? (between 8 and 128)");
+  if (isNaN(length) || length < 8 || length > 128) {
+  alert("Please choose numbers between 8 - 128!");
+  return generatePassword();
+  }
+  var hasUpper = confirm("Include upper case letters?");
+  var hasLower = confirm("Include lower case letters?");
+  var hasNumbers = confirm("Include numbers?");
+  var hasSpecial = confirm("Include special characters?");
+  if (!hasUpper && !hasLower && !hasNumbers && !hasSpecial) {
+  alert("You must at least choose 1 character type!");
+  return generatePassword();
+  }
+// if statment checks for the four boolean variables
+  if (hasUpper) {
+  chosenCharacters += upper;
+  }
+  if (hasLower) {
+  chosenCharacters += lower;
+  }
+  if (hasNumbers) {
+  chosenCharacters += numbers;
+  }
+  if (hasSpecial) {
+  chosenCharacters += special;
+  }
+  for (var i = 0; i < length; i++) {
+  result += chosenCharacters.charAt(Math.floor(Math.random() * chosenCharacters.length));
+  }
+  return result;
   }
 
-// ENTRY PART THREE:
-
-
-// NOTE: CONDENCE THE CONST INTO VARS AND CREATE IF STATMENT
-
-// PAPA SEGUNDOS TOMORROW @ 10 CALL DAD @ 8 TOMORROW MORNING 
-
-  // Presented User Message: Indicates that user must fulfill 
-  alert('Required: Select "Cancel" or "Okay" when presented with Character Choices. You must select "Okay" atleast once, to 1 out of the 4 Character Choices to Generate a Password.');
-  
-
-  const lowerCaseCharacter = confirm(
-    'Character Choice: Do you want to include Lowercase?'
-  );
-  const upperCaseCharacter = confirm(
-    'Character Choice: Do you want to incldue Uppercase?'
-  );
-  const numericCaseCharacter = confirm(
-    'Character Choice: Do you want to include Numeric?'
-    );
-
-  const specialCaseCharacter = confirm(
-    'Character Choice: Do you want to include Special Characters?'
-  );
-
-  if (lowerCaseCharacter === true){
-    
-  }
-
-  let passwordCriteria = {
-    PasswordLength,
-    lowerCaseCharacter,
-    upperCaseCharacter,
-    numericCaseCharacter,
-    specialCaseCharacter,
-  };
-
-
-
-
-
-
-  // ENTRY PART FOUR
-
-  const characterChoice = Object.keys(passwordCriteria).filter(
-    (key) => passwordCriteria[key] === true
-  );
-
-  if (!characterChoice.length) {
-    invaildInput();
-    return 'To Complete Generation: you must select "Okay" for 1 out of 4 previous "Character Choices"';
-  }
-  
-  let characterPassword = [];
-  let generatePassword = '';
-
-  if (passwordCriteria.lowerCaseCharacter) {
-    generatePassword += shuffledCharacter(lower);
-    characterPassword.push(...lower);
-  }
-  if (passwordCriteria.upperCaseCharacter) {
-    generatePassword += shuffledCharacter(upperCaseCharacter);
-    characterPassword.push(...upperCaseCharacter);
-  }
-
-  if (passwordCriteria.numericCaseCharacter) {
-    generatePassword += shuffledCaseCharacter(numericCaseCharacter);
-    characterPassword.push(...numericCaseCharacter);
-  }
-
-  if (passwordCriteria.specialCaseCharacter) {
-    generatePassword += shuffledCharacter(specialCaseCharacter);
-    characterPassword.push(...specialCaseCharacter);
-  }
-
-  while (generatePassword.length < passwordCriteria.PasswordLength) {
-    generatePassword += shuffledCharacter(characterPassword);
-  }
-
-  return generatePassword; 
-}
-
-
-
-function writePassword() {
-  passwordText.value = generatePassword();
-}
-
-generateBtn.addEventListener('click', writePassword);
-
+  // This JavaScript took me forever and for somone who hasn't done JS ever until this bootcamp it was a heck of challenge 
+  // I have never been so determiend to become a master at JavaScript 😅

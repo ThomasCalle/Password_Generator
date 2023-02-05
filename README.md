@@ -1,100 +1,84 @@
-# 03 JavaScript: Password Generator
+# Thomas' Password Generator
 
-## Your Task
+## Description
 
-This week's Challenge requires you to modify starter code to create an application that enables employees to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
+Thomas' Password Generator
 
-The password can include special characters. If you’re unfamiliar with these, see this [list of password special characters](https://www.owasp.org/index.php/Password_special_characters) from the OWASP Foundation.
+It does exactly what you though it does, it generates passwords - but how? Based of the criteria provided into the generator professionals, consumers, clients and employers alike will be able to use this application to 'generator a password' so have fun at it and take a go out! Be sure to read the rest of the README.md to see the criteria specified.
 
-## User Story
+## Table of contents
 
+- [Overview](#overview)
+- [The challenge](#the-challenge)
+- [Screenshot](#screenshot)
+- [Links](#links)
+- [My process](#my-process)
+- [Built with](#built-with)
+- [What I learned](#what-i-learned)
+- [Continued development](#continued-development)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
+
+
+## Overview
+
+### The challenge
+
+This week's Challenge requires me (Thomas Calle) to modify a provided UofT bootcamp HTML & CSS starter code... to create an application that enables employees to generate random passwords based on criteria of their choice. The application will features dynamically updated HTML and CSS powered by own fully written JavaScript(not the bootcamps JS my JS so let's make that clear) code... and will have an adaptive responsive web sight design.
+
+## The Password Generator will give the use the option to choose the following:
 ```
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
+- Length: at least 8 characters and no more than 128 characters
+- Character Type: lowercase, uppercase, numeric, and/or special characters
+- Confirm: validate at least one of the above character types
 ```
 
-## Acceptance Criteria
+### Screenshot
 
-```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN asked for character types to include in the password
-THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-```
+![](./Assets/Image/PasswordGeneratorPhoto.png)
 
-## Mock-Up
+### Links
 
-The following image shows the web application's appearance and functionality:
+- Solution URL: [Solution URL](https://thomascalle.github.io/Password_Generator/)
 
-![The Password Generator application displays a red button to "Generate Password".](./Assets/03-javascript-homework-demo.png)
 
-## Grading Requirements
+## My process
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+I initialized and configured a GitHub repository to maintain version control for this project. The project utilizes GitHub pages to easily publish this project for others to view. 
 
-This Challenge is graded based on the following criteria: 
+Once initiated, my goal was to establish my plot into JavaScript(JS) as it was the main focus to complete and add JS into a HTML & CSS starter code. First entry, established the constant variable query selectors - then the password criteria for the characters: lower case, upper case, numerical, and special characters... these were established as var with the appropriate range of character amounts of each choice listed within the "var choosenCharacter = "";" (take note kids, this will help you in the future).
 
-### Technical Acceptance Criteria: 40%
+From there the reall complicated stuff begins.... The function starts to initialize the "result" then it prompts the user for the length of the password (in characters) using "prompt()". If the input is not a a valued number aka. anything mentioned outside the established parameter of "8 to 128 characters" if it is given outside those bounds then a error message is displayed through "alert()" the function will then call it again using the "return generatePassword()". 
 
-* Satisfies all of the preceding acceptance criteria.
+From here the "confirm()" will ask to include the following; upper case letters, lower case letters, numbers, and special characters - this will be inputed into the newly generated password of preference and will be shown in the generated password box on screen. Now the most important part of this is the "if" part ... "if" you(the user) selects none of the presented options on screen then you will be promted with an error code message - the error message will display - then the function will call everything again.
 
-### Deployment: 32%
+Once the fucntion calls everything again, you (the user) will have to repeat the sequence again, until you meet mandatory requirment... 1. desired length within parameter has been chosen. 2. a minimum of 1 out of 4 character options were chosen. After both 1 and 2 have been completed the password will be generated in presented in the box on screen.
+  
+Note: Please, do take your time to review my process... as a new beginer in JavaScript the process was difficult for me. I have left some key notes and pointers in the process and some within the JavaScript file.
+----
 
-* Application deployed at live URL.
+### Built with
 
-* Application loads with no errors.
+- Starter code HTML & CSS
+- Dynamic JavaScript (from scratch)
+- Updated CSS custom properties
+- Updated HTML custom properties
+- Comments - clear indicators and point reference marks
+- Images, sourced locally, images/photos created by the author(Thomas Calle)
 
-* Application GitHub URL submitted.
+### What I learned
 
-* GitHub repository that contains application code.
+I learned how to build dynamically formated JavaScript catering towards a client themed demand - that being I was provided with UofT bootcamp starter code HTML & CSS with a Mockup and criteria ... this forced me to go out of my comfort zone by catering to the needs of others as the objective was specified and the visual design was given and is expected no matter what. The process of this created many obstacles - as it is always easier to go off 'personal preference' as building your own starter code with your own preference does not limit you. 
 
-### Application Quality: 15%
+### Continued development
 
-* Application user experience is intuitive and easy to navigate.
+The next step of journey, involves a few endless nights here and there doing whats nescessary to catch up on my foundational JavaScript to push the envelope further - practice makes perfect.
 
-* Application user interface style is clean and polished.
 
-* Application resembles the mock-up functionality provided in the Challenge instructions.
+## Author
 
-### Repository Quality: 13%
+-[My Portfolio Site](https://github.com/ThomasCalle)
 
-* Repository has a unique name.
 
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
-- - -
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## Acknowledgments
+Thank you, goes out to those who have taken the time acknowledge my work and progress - I can't wait to take things up a notch. 
