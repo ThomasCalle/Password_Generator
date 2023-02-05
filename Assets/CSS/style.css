@@ -1,5 +1,4 @@
-/* Hello there, CSS style sheet ahead! */ 
-/* Universal selectors for entire HTML */
+/* Begining of CSS style sheet for Thomas' Password Generator - enjoy!*/
 *,
 *::before,
 *::after {
@@ -13,7 +12,27 @@ body,
   margin: 0;
   padding: 0;
 }
-
+h2{
+text-align: center;
+}
+h5 {
+  padding-top: 1rem;
+  font-size: 20px;
+  margin-bottom: -10px;
+  color: rgb(189, 144, 106);
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+}
+h6 {
+  padding-bottom: 1rem;
+  font-size: 10px;
+  margin-bottom: 0.625rem;
+  color: rgb(189, 144, 106);
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+}
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
@@ -137,3 +156,12 @@ button[disabled] {
     font-size: 0.8rem;
   }
 }
+/* Start: footer section styling */
+.footer {
+  background-color: #f2f2f2;
+  padding: 0px;
+  border-radius: 4px;
+  font-family: "apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+/* End: footer section styling*/
+/* End of CSS style sheet, thank you for viewing - Thomas Calle */
