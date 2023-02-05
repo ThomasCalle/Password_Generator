@@ -1,8 +1,5 @@
 // Hello there, JavaScript ahead!
 // First entry, both constant variables assigned to the element id of '#generate' and '#password'
-var generateBtn = document.querySelector('#generate');
-var passwordText = document.querySelector('#password');
-
 // Password criteria include the follwoing characters: lower case, upper case, numerical, and special character
 var generateBtn = document.querySelector("#generate");
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
