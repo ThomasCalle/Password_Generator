@@ -1,5 +1,5 @@
 // Hello there, JavaScript ahead!
-// First entry, both constant variables assigned to the element id of '#generate' and '#password'
+// Variables assigned to the element id of '#generate' and '#password'
 // Password criteria include the follwoing characters: lower case, upper case, numerical, and special character
 var generateBtn = document.querySelector("#generate");
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -7,10 +7,10 @@ var lower = "abcdefghijklmnopqrstuvwxyz";
 var numbers = "0123456789";
 var special = "!@,#$%&*{}[]+\/=";
 var chosenCharacters = "";
-//doesn't work - find error
+
 // Function calls for the written password to be stored among the html in the displayed password box
-chosenCharacters = "";
 function writePassword() {
+chosenCharacters = "";
 var password = generatePassword();
 var passwordText = document.querySelector("#password");
 passwordText.value = password;
@@ -22,7 +22,7 @@ generateBtn.addEventListener("click", writePassword);
 // If the input is not a a valued number or is outside peramitor of 8 to 128 characters, error message is displayed through "alert()" the function will then call again using "return generatePassword()".
 // Then "confirm()" asks to include upper case letters, lower case letters, numbers, and special characters into the newly generated password based off your preferance. If the user selects none of the options then the use will be promted with a error message - error is displayed - then the function is called again.
 // Only whenn the user meets the criteria of desired length and all character options have been made the generated password will be executed. 
-  
+
 function generatePassword() {
 var result = "";
 var length = prompt("How many characters in your random password? (between 8 and 128)");
