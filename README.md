@@ -39,7 +39,7 @@ This week's Challenge requires me (Thomas Calle) to modify a provided UofT bootc
 
 ### Links
 
-- Solution URL: [Solution URL]
+- Solution URL: [Solution URL](https://thomascalle.github.io/Password_Generator/)
 
 
 ## My process
